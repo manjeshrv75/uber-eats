@@ -1,0 +1,91 @@
+//////////////////////////////////////////////
+// Variables
+:root {
+  // Colors
+  --color-primary: #5fb709;
+
+  --color-grey-dark-1: #262626;
+  --color-grey-dark-2: #585858;
+
+  --color-grey-light: #f4f5f7;
+
+  --color-black: #000000;
+  --color-white: #ffffff;
+
+  // Fonts
+  --font-default: 'Kayak Sans', sans-serif;
+}
+
+//////////////////////////////////////////////
+// Custom scroll bar
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--color-grey-light);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 2rem;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: darken(#5fb709, 5%);
+}
+
+//////////////////////////////////////////////
+// Import fonts
+@font-face {
+  font-family: 'Kayak Sans';
+  src: url(../fonts/kayak-sans-light.otf);
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Kayak Sans';
+  src: url(../fonts/kayak-sans-regular.otf);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Kayak Sans';
+  src: url(../fonts/kayak-sans-bold.otf);
+  font-weight: 700;
+}
+
+//////////////////////////////////////////////
+// Base setup
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+html {
+  // This sets 1rem to 10px
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: var(--font-default);
+}
+
+//////////////////////////////////////////////
+// Typography related
+.h2 {
+  font-weight: 700;
+  font-size: 3.4rem;
+}
+
+.para {
+  font-size: 1.6rem;
+}

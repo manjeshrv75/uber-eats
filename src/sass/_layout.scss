@@ -1,0 +1,507 @@
+//////////////////////////////////////////////
+// Section specific
+.section {
+  padding-top: 15vh;
+  padding-bottom: 15vh;
+
+  @include respond(lg) {
+    padding-top: 30vh;
+    padding-bottom: 30vh;
+  }
+
+  // This applies skewed design to sections
+  transform: skewY(-7deg);
+
+  // Select all direct children and add opposite skew
+  & > * {
+    transform: skewY(7deg);
+  }
+}
+
+//////////////////////////////////////////////
+// Row
+.row {
+  width: 100%;
+  max-width: 120rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+
+  @include respond(xl) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+//////////////////////////////////////////////
+// Header
+.header {
+  margin-top: -8vh;
+  height: 90vh;
+  position: relative;
+
+  @include respond(lg) {
+    margin-top: -15vh;
+    height: auto;
+  }
+
+  &__content {
+    display: grid;
+    justify-items: start;
+    grid-template-columns: 30rem;
+
+    @include respond(lg) {
+      grid-template-columns: 35rem;
+    }
+  }
+
+  &__onion-img {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50% -50%);
+    width: 30vw;
+    max-width: 18rem;
+
+    @include respond(sm) {
+      top: 50%;
+      left: 65%;
+    }
+
+    @include respond(md) {
+      top: 90%;
+      left: 20%;
+    }
+  }
+}
+
+//////////////////////////////////////////////
+// Hero
+.hero {
+  &__img {
+    top: 0;
+    right: 0;
+    position: absolute;
+    display: none;
+    width: 60vw;
+
+    @include respond(md) {
+      display: inline-block;
+    }
+  }
+}
+
+//////////////////////////////////////////////
+// Section deliver
+.section-deliver {
+  &__content {
+    display: grid;
+    grid-gap: 3rem;
+
+    @include respond(md) {
+      align-items: center;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__img {
+    width: 80%;
+    justify-self: center;
+    display: inline-block;
+
+    @include respond(md) {
+      justify-self: start;
+    }
+  }
+
+  &__text {
+    @include respond(md) {
+      width: 50rem;
+    }
+  }
+}
+
+//////////////////////////////////////////////
+// Section local
+.section-local {
+  position: relative;
+
+  &__content {
+    display: grid;
+    grid-gap: 3rem;
+
+    @include respond(sm) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__wave-img {
+    width: 8rem;
+    display: none;
+  }
+
+  &__img {
+    width: 100%;
+    max-width: 35rem;
+  }
+
+  &__broken-egg {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 27%;
+    width: 15vw;
+    max-width: 20rem;
+  }
+
+  &__sliced-cucumber {
+    position: absolute;
+    bottom: 5%;
+    left: -5%;
+    width: 30vw;
+    max-width: 450rem;
+    display: none;
+  }
+
+  &__wave-img,
+  &__broken-egg,
+  &__sliced-cucumber {
+    @include respond(lg) {
+      display: inline-block;
+    }
+  }
+}
+
+//////////////////////////////////////////////
+// Section account
+.section-account {
+  position: relative;
+  @include respond(md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  &__img {
+    width: 90%;
+    max-width: 60rem;
+    position: absolute;
+    top: -5%;
+
+    @include respond(md) {
+      top: 0;
+    }
+  }
+
+  &__content {
+    display: grid;
+    grid-template-rows: 80vw min-content;
+
+    @include respond(md) {
+      grid-template-rows: 60rem min-content;
+    }
+
+    @include respond(xl) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__text {
+    display: grid;
+  }
+
+  &__mushroom {
+    width: 25%;
+    justify-self: end;
+    display: none;
+  }
+
+  &__wave-img {
+    width: 8rem;
+    display: inline-block;
+    display: none;
+  }
+
+  &__mushroom,
+  &__wave-img {
+    @include respond(xl) {
+      display: inline-block;
+    }
+  }
+}
+
+//////////////////////////////////////////////
+// Section track
+.section-track {
+  position: relative;
+
+  &__bg-img {
+    width: 100%;
+    position: absolute;
+    top: 40%;
+
+    @include respond(md) {
+      top: 25%;
+    }
+  }
+
+  &__content {
+    display: grid;
+    grid-gap: 3rem;
+
+    @include respond(sm) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__text {
+    @include respond(sm) {
+      margin-top: 10rem;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    max-width: 35rem;
+  }
+
+  &__pepper,
+  &__sandwitch,
+  &__momo {
+    display: none;
+    position: absolute;
+    width: 15rem;
+
+    @include respond(md) {
+      display: inline-block;
+    }
+  }
+
+  &__pepper {
+    top: 5%;
+    right: 50%;
+  }
+
+  &__sandwitch {
+    left: 10%;
+    bottom: 20%;
+  }
+
+  &__momo {
+    left: 25%;
+    bottom: 5%;
+  }
+}
+
+//////////////////////////////////////////////
+// Section order
+.section-order {
+  position: relative;
+
+  &__content {
+    display: grid;
+    grid-gap: 3rem;
+
+    @include respond(md) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__img {
+    width: 100%;
+    max-width: 100rem;
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo {
+    display: inline-block;
+    margin-right: 2rem;
+    width: 6rem;
+    height: 6rem;
+  }
+
+  &__download-btn {
+    &:link,
+    &:visited {
+      display: inline-block;
+      text-decoration: none;
+      width: 14rem;
+      transition: all 0.3s ease-out;
+    }
+
+    &:hover {
+      transform: translateY(-2px);
+    }
+  }
+
+  &__download-img {
+    display: inline-block;
+    width: 100%;
+  }
+
+  &__wave-img,
+  &__palak,
+  &__breakfast {
+    display: none;
+    position: absolute;
+
+    @include respond(md) {
+      display: inline-block;
+    }
+  }
+
+  &__wave-img {
+    top: 15%;
+    left: 45%;
+    width: 8rem;
+  }
+
+  &__palak {
+    width: 20rem;
+    right: 10rem;
+    top: 5rem;
+  }
+
+  &__breakfast {
+    right: 30%;
+    bottom: 20%;
+  }
+}
+
+//////////////////////////////////////////////
+// Section get started
+.section-get-started {
+  padding-bottom: 0;
+  &__content {
+    display: grid;
+    grid-gap: 12vw;
+    padding-left: 17vw;
+    padding-right: 17vw;
+
+    @include respond(sm) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+//////////////////////////////////////////////
+// Fill gap
+.fill-gap {
+  height: 30vh;
+  margin-top: -17vh;
+  background-color: red;
+}
+
+//////////////////////////////////////////////
+// Footer
+.footer {
+  color: var(--color-white);
+  padding-top: 7vh;
+  padding-bottom: 7vh;
+
+  @include respond(lg) {
+    padding-top: 15vh;
+    padding-bottom: 15vh;
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    grid-gap: 3rem;
+  }
+
+  &__social-icons {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: min-content;
+    grid-gap: 1rem;
+  }
+
+  &__social-link {
+    &:link,
+    &:visited {
+      color: var(--color-white);
+      text-decoration: none;
+      transition: all 0.3s ease-out;
+    }
+
+    &:hover {
+      color: var(--color-primary);
+    }
+
+    svg {
+      fill: currentColor;
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  }
+
+  &__nav-1 {
+  }
+
+  &__nav-2 {
+  }
+
+  &__nav-3 {
+  }
+
+  &__list {
+    list-style: none;
+    display: grid;
+    grid-gap: 2rem;
+  }
+
+  &__item {
+  }
+
+  &__link {
+    &:link,
+    &:visited {
+      text-decoration: none;
+      font-size: 1.6rem;
+      color: var(--color-white);
+      transition: all 0.3s ease-out;
+    }
+
+    &:hover {
+      color: var(--color-primary);
+    }
+  }
+
+  &__download {
+  }
+
+  &__download-link-box {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: min-content;
+    grid-gap: 0.5rem;
+  }
+
+  &__download-link {
+    &:link,
+    &:visited {
+      text-decoration: none;
+      display: inline-block;
+      width: 10rem;
+      transition: all 0.3s ease-out;
+    }
+
+    &:hover {
+      transform: translateY(-2px);
+    }
+  }
+
+  &__download-btn {
+    display: inline-block;
+    width: 100%;
+  }
+
+  &__copyright {
+    color: var(--color-grey-dark-2);
+    font-size: 1.4rem;
+  }
+}

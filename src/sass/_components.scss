@@ -1,0 +1,78 @@
+//////////////////////////////////////////////
+// Button
+.btn {
+  &,
+  &:link,
+  &:visited {
+    border: none;
+    background-color: transparent;
+    font-size: 1.6rem;
+    font-weight: 700;
+    font-family: inherit;
+    letter-spacing: 0.5px;
+    border-radius: 0.5rem;
+    padding: 1rem 2rem;
+    display: inline-block;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+
+    @include respond(md) {
+      padding: 1.6rem 3.2rem;
+    }
+  }
+
+  &:hover {
+    background-color: darken(#5fb709, 5%);
+  }
+
+  &:active {
+    background-color: darken(#5fb709, 10%);
+  }
+}
+
+.btn--primary {
+  color: var(--color-white);
+  background-color: var(--color-primary);
+}
+
+//////////////////////////////////////////////
+// Form
+.form {
+  display: flex;
+  width: 100%;
+  &__input {
+    padding: 0.9rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--color-primary);
+    color: var(--color-grey-dark-1);
+    margin-right: 1rem;
+    flex: 1;
+
+    &::placeholder {
+      color: rgba(0, 0, 0, 0.3);
+    }
+
+    @include respond(md) {
+      padding: 1.5rem;
+    }
+  }
+}
+
+//////////////////////////////////////////////
+// Get started
+.get-started {
+  display: grid;
+  grid-gap: 1rem;
+  &__icon {
+    display: inline-block;
+  }
+
+  &__title {
+    color: var(--color-primary);
+    font-size: 2.4rem;
+  }
+
+  &__btn {
+    justify-self: start;
+  }
+}
